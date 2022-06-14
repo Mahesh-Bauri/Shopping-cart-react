@@ -1,42 +1,12 @@
-import "./categories.styles.scss";
+import "./components/category-item/category-item.style.scss";
+import CategoryItem from "./components/category-item/CategoryItem";
+import categories from "./components/category-item/categories";
 
 const App = () => {
-  const catagories = [
-    {
-      id: 1,
-      title: "Hats",
-    },
-
-    {
-      id: 2,
-      title: "Jackets",
-    },
-    {
-      id: 3,
-      title: "Sneakers",
-    },
-    {
-      id: 4,
-      title: "Womens",
-    },
-    {
-      id: 5,
-      title: "Mens",
-    },
-  ];
-
   return (
     <div className="categories-container">
-      {catagories.map(({ title, id }) => {
-        return (
-          <div key={id} className="category-container">
-            <div className="background-image" />
-            <div className="category-body-container">
-              <h2>{title}</h2>
-              <p>Shop Now</p>
-            </div>
-          </div>
-        );
+      {categories.map((category) => {
+        return <CategoryItem category={category} key={category.id} />;
       })}
     </div>
   );
