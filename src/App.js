@@ -3,9 +3,12 @@ import Home from "./components/routes/home/Home";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/routes/navigation/Navigation";
 import Authentication from "./components/routes/authentication/Authentication";
-
+import { useContext } from "react";
+import { UserContext } from "./contexts/UserProvider";
 const Shop = () => {
-  return <h1>I am Shop</h1>;
+  const value = useContext(UserContext);
+
+  return <h1>I am Shop {value.msg}</h1>;
 };
 
 const App = () => {

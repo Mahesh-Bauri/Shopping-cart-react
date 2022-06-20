@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./sign-up.style.scss";
 
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserProvider";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -16,6 +18,8 @@ const defaultFormFields = {
 };
 
 function SignUp() {
+  const { setCurrentUser } = useContext(UserContext);
+  console.log("signup");
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
   const handleChange = (event) => {
@@ -43,7 +47,7 @@ function SignUp() {
         email,
         password
       );
-
+      setCurrentUser(user);
       await createUserDocumentFromAuth(user, { displayName });
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
