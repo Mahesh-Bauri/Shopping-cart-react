@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartProvider";
 
 function CartIcon({ handleShow }) {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
 
   function toggle() {
     setIsCartOpen(!isCartOpen);
@@ -13,7 +13,7 @@ function CartIcon({ handleShow }) {
   return (
     <div className="cart-icon-container" onClick={toggle}>
       <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">10</span>
+      <span className="item-count">{cartCount}</span>
     </div>
   );
 }
