@@ -5,9 +5,9 @@ import { CartContext } from "../../contexts/CartProvider";
 
 function ProductsCard({ product }) {
   const { name, imageUrl, price } = product;
-  const { addItemtoCart } = useContext(CartContext);
+  const { addItemToCart } = useContext(CartContext);
 
-  const addProductToCart = () => addItemtoCart(product);
+  const addProductToCart = () => addItemToCart(product);
 
   return (
     <div className="product-card-container">
