@@ -9,6 +9,7 @@ function CategoriesProvider({ children }) {
   const [categoriesMap, setCategoriesMap] = useState({});
 
   useEffect(() => {
+    console.log(categoriesMap);
     const getCategoriesMap = async () => {
       const categoryMap = await getCategoriesAndDocuments();
       setCategoriesMap(categoryMap);
