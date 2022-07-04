@@ -12,9 +12,7 @@ function CartItem({ cartItem }) {
       <Image src={imageUrl} alt={name} />
       <ItemDetails>
         <Name>{name}</Name>
-        <span className="price">
-          {quantity} x {price}
-        </span>
+        <span className="price">{`${quantity} x ${"$" + price}`}</span>
       </ItemDetails>
     </CartItemContainer>
   );
