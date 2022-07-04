@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext } from "react";
 import { useReducer } from "react";
 import { createAction } from "../utils/reducer/reducer.utils";
 const addCartItem = (cartItems, productToAdd) => {
