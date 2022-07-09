@@ -5,9 +5,9 @@ import {
   BackgroundImage,
   Body,
 } from "./directory-item.styles";
+
 function DirectoryItem({ category }) {
   const { title, imageUrl, route } = category;
-
   const navigate = useNavigate();
   const onNavigateHandler = () => navigate(route);
   return (
