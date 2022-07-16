@@ -49,10 +49,12 @@ function PaymentForm() {
     setIsProcessingPayment(false);
 
     console.log(paymentResult);
-    if (paymentResult.paymentIntent.status === "succeeded") {
-      alert("Payment Successfull");
+    if (paymentResult.error) {
+      alert(paymentResult.error.message);
     } else {
-      alert("Payment Error");
+      if (paymentResult.paymentIntent.status === "succeeded") {
+        alert("Payment Successful!");
+      }
     }
   };
 
