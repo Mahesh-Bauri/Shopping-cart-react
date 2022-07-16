@@ -25,6 +25,5 @@ export function* onFetchCategories() {
 }
 
 export function* categoriesSaga() {
-  console.log("SAGA");
   yield all([call(onFetchCategories)]);
 }

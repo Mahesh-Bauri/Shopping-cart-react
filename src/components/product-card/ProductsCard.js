@@ -20,7 +20,7 @@ function ProductsCard({ product }) {
       <img src={imageUrl} alt={name} />
       <Footer>
         <Name>{name}</Name>
-        <Price>{price}</Price>
+        <Price>{"$" + price}</Price>
       </Footer>
       <Button
         onClick={addProductToCart}

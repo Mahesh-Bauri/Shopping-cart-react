@@ -25,6 +25,15 @@ const Navigation = () => {
       <NavigationContainer>
         <LogoContainer to="/">
           <CrwnLogo className="logo" />
+          {/* <h3
+            style={{
+              // marginLeft: "14px",
+              padding: "10px",
+              paddingLeft: 0,
+            }}
+          >
+            Shopping Cart
+          </h3> */}
         </LogoContainer>
         <NavLinks>
           <NavLink to="/shop">SHOP</NavLink>

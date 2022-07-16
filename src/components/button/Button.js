@@ -1,6 +1,11 @@
 import React from "react";
 import "./button.style.js";
-import { BaseButton, GoogleSignInButton, InvertedButton } from "./button.style";
+import {
+  BaseButton,
+  GoogleSignInButton,
+  InvertedButton,
+  ButtonSpinner,
+} from "./button.style";
 /*
 default
 google
@@ -29,9 +34,13 @@ const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
 //   return CustomBtn[buttonType];
 // };
 
-function Button({ children, buttonType, ...otherProps }) {
+function Button({ children, isLoading, buttonType, ...otherProps }) {
   const CustomButton = getButton(buttonType);
-  return <CustomButton {...otherProps}>{children}</CustomButton>;
+  return (
+    <CustomButton disabled={isLoading} {...otherProps}>
+      {isLoading ? <ButtonSpinner /> : children}
+    </CustomButton>
+  );
 }
 
 export default Button;

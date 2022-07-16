@@ -1,12 +1,12 @@
-import styled from "styled-components"
- export const ProductCardContainer = styled.div`
- 
+import styled from "styled-components";
+export const ProductCardContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   height: 350px;
   align-items: center;
   position: relative;
+  /* border: 1px solid #242424; */
 
   img {
     width: 100%;
@@ -30,30 +30,29 @@ import styled from "styled-components"
 
     button {
       opacity: 0.85;
-      display:flex;
+      display: flex;
     }
   }
- 
- ` 
+`;
 
 export const Footer = styled.div`
-    width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
-`
+  width: 100%;
+  height: 5%;
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+`;
 
 export const Name = styled.span`
-      width: 90%;
-      margin-bottom: 15px;
-`
+  width: 90%;
+  margin-bottom: 15px;
+`;
 
 export const Price = styled.span`
-      width: 10%;
-`
-
-
+  width: 15%;
+  text-align: right;
+`;
 
 //   width: 100%;
 //   display: flex;
