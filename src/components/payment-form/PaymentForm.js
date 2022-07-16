@@ -30,13 +30,14 @@ function PaymentForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        amount: amount * 100,
+        amount: amount * 79.72 * 100,
       }),
     }).then((res) => res.json());
 
     const {
       paymentIntent: { client_secret },
     } = response;
+
     const paymentResult = await stripe.confirmCardPayment(client_secret, {
       payment_method: {
         card: elements.getElement(CardElement),
