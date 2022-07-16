@@ -25,6 +25,8 @@ const middlerWares = [
   sagaMiddleware,
 ].filter(Boolean);
 
+// const middlerWares = [sagaMiddleware];
+
 const composeEnhancer =
   (process.env.NODE_ENV !== "production" &&
     window &&
