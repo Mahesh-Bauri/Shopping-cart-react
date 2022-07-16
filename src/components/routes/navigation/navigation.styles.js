@@ -28,6 +28,23 @@ export const NavLinks = styled.div`
 export const NavLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+
+  &:hover {
+    /* background: #e2e2e2; */
+    background: #f1f1f1;
+  }
+`;
+
+export const UserIcon = styled(NavLink)`
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const UserName = styled.span`
+  font-weight: 600;
+  margin-left: 5px;
 `;
 
 // .navigation {

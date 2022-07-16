@@ -7,6 +7,7 @@ import {
   signOutSuccess,
   signUpFailed,
   signUpSuccess,
+  setIsLoading,
 } from "./user.action";
 
 import {
@@ -26,6 +27,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
       userAuth,
       additionalDetails
     );
+
     yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
   } catch (error) {
     yield put(signInFailed(error));
@@ -34,6 +36,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
 
 export function* signInWithEmail({ payload: { email, password } }) {
   try {
+    yield put(setIsLoading(true));
     const { user } = yield call(
       signInAuthUserWithEmailAndPassword,
       email,

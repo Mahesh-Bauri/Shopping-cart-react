@@ -5,11 +5,14 @@ import { Outlet } from "react-router-dom";
 import { ReactComponent as CrwnLogo } from "../../../assets/crown.svg";
 import CartIcon from "../../cart-icon/CartIcon";
 import CartDropdown from "../../cart-dropdown/CartDropdown";
+import { FaUserCircle } from "react-icons/fa";
 import {
   NavigationContainer,
   LogoContainer,
   NavLinks,
   NavLink,
+  UserIcon,
+  UserName,
 } from "./navigation.styles";
 import { selectIsCartOpen } from "../../../store/cart/cart.selector";
 import { signOutStart } from "../../../store/user/user.action";
@@ -27,7 +30,7 @@ const Navigation = () => {
     <Fragment>
       <NavigationContainer>
         <LogoContainer to="/">
-          <CrwnLogo className="logo" />
+          <CrwnLogo />
           {/* <h3
             style={{
               // marginLeft: "14px",
@@ -39,6 +42,12 @@ const Navigation = () => {
           </h3> */}
         </LogoContainer>
         <NavLinks>
+          {currentUser && currentUser.displayName && (
+            <UserIcon as="span">
+              <FaUserCircle />
+              <UserName>{currentUser.displayName}</UserName>
+            </UserIcon>
+          )}
           <NavLink to="/shop">SHOP</NavLink>
           {currentUser ? (
             <NavLink as="span" onClick={signOutUser}>

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { SignInContainer, ButtonContainer } from "./sign-in.styles.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import FormInput from "../form-input/FormInput";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
 import {
   emailSignInStart,
   googleSignInStart,
 } from "../../store/user/user.action.js";
+import { selectIsLoading } from "../../store/user/user.selector.js";
 
 const defaultFormFields = {
   email: "",
@@ -15,6 +16,7 @@ const defaultFormFields = {
 
 function SignIn() {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const handleChange = (event) => {
@@ -76,7 +78,9 @@ function SignIn() {
           onChange={handleChange}
         />
         <ButtonContainer>
-          <Button type="subimt">SIGN IN</Button>
+          <Button isLoading={isLoading} type="subimt">
+            SIGN IN
+          </Button>
           <Button
             onClick={signInWithGoogle}
             buttonType={BUTTON_TYPE_CLASSES.google}

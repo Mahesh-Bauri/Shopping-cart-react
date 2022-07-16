@@ -16,21 +16,27 @@ export const ProductCardContainer = styled.div`
   }
 
   button {
-    width: 80%;
+    width: 70%;
     opacity: 0.7;
     position: absolute;
-    top: 255px;
+    top: 250px;
     display: none;
+    border: none;
+    box-shadow: -2px 2px 8px 0.1px #373737;
   }
 
   &:hover {
     img {
-      opacity: 0.8;
+      opacity: 1;
+      filter: blur(1.3px);
     }
 
     button {
-      opacity: 0.85;
+      opacity: 0.7;
       display: flex;
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 `;
