@@ -7,6 +7,7 @@ export const CheckoutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+  position: relative;
 `;
 
 export const CheckoutHeader = styled.div`
@@ -30,4 +31,30 @@ export const Total = styled.span`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
+`;
+
+export const TestingInfo = styled.p`
+  /* margin-top: 5px; */
+
+  /* align-self: flex-start; */
+
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 400;
+  /* color: #bdbdbd; */
+  color: #959595;
+`;
+
+export const Footer = styled(TestingInfo)`
+  margin-top: 10px;
+  color: #959595;
+  position: absolute;
+  bottom: 5px;
+  b {
+    color: #282828;
+  }
+
+  span {
+    color: #282828;
+  }
 `;

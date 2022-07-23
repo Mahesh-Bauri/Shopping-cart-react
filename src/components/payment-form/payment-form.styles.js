@@ -27,3 +27,19 @@ export const EmptyMessage = styled.p`
   font-size: 2rem;
   padding: 3rem 2rem;
 `;
+
+export const PaymentHeading = styled.div`
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;

@@ -8,7 +8,6 @@ import Checkout from "./components/checkout/Checkout";
 import { useDispatch } from "react-redux";
 import React from "react";
 import { useEffect } from "react";
-
 import { checkUserSession } from "./store/user/user.action";
 
 const App = () => {

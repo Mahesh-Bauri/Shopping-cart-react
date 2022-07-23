@@ -4,6 +4,7 @@ import {
   CheckoutHeader,
   HeaderBlock,
   Total,
+  Footer,
 } from "./checkout.styles.js";
 
 import CheckoutItem from "../checkout-item/CheckoutItem";
@@ -44,6 +45,10 @@ function Checkout() {
       })}
       {cartTotal !== 0 && <Total>{`Total : $${cartTotal}`} </Total>}
       <PaymentForm />
+
+      <Footer>
+        Made with <span>❤</span> by <b>Mahesh Bauri</b>
+      </Footer>
     </CheckoutContainer>
   );
 }
