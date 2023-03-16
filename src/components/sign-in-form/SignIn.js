@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { SignInContainer, ButtonContainer } from "./sign-in.styles.js";
+import {
+  SignInContainer,
+  ButtonContainer,
+} from "./sign-in.styles.js";
 import { useDispatch, useSelector } from "react-redux";
 import FormInput from "../form-input/FormInput";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
+import Button, {
+  BUTTON_TYPE_CLASSES,
+} from "../button/Button";
 import {
   emailSignInStart,
   googleSignInStart,
@@ -17,7 +22,9 @@ const defaultFormFields = {
 function SignIn() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [formFields, setFormFields] = useState(
+    defaultFormFields
+  );
   const { email, password } = formFields;
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -38,7 +45,16 @@ function SignIn() {
     const { email, password } = formFields;
 
     try {
-      dispatch(emailSignInStart(email, password));
+      if (email === "" && password === "") {
+        dispatch(
+          emailSignInStart(
+            "guestuser@gmail.com",
+            "guest123#"
+          )
+        );
+      } else {
+        dispatch(emailSignInStart(email, password));
+      }
 
       resetFields();
     } catch (error) {
@@ -58,7 +74,10 @@ function SignIn() {
   return (
     <SignInContainer>
       <h2>Already have an account?</h2>
-      <span>Sign In with your email and password</span>
+      <span>Sign In with your email and password or</span>
+      <h4 className="guest" onClick={handleSubmit}>
+        Sign In as Guest
+      </h4>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Email"
