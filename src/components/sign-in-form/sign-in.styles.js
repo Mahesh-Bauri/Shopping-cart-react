@@ -8,6 +8,11 @@ export const SignInContainer = styled.div`
   h2 {
     margin: 10px 0;
   }
+
+  .guest:hover {
+    cursor: pointer;
+    color: #5f5f5f;
+  }
 `;
 
 export const ButtonContainer = styled.div`
