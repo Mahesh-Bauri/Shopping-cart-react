@@ -14,7 +14,7 @@ export const ProductCardContainer = styled.div`
 	border-top: none;
 	overflow: hidden;
 	border-radius: 0.125rem; /* 2px */
-	background-color: white;
+	background-color: #f9fafb;
 
 	img {
 		width: 100%;
@@ -44,6 +44,7 @@ export const ProductCardContainer = styled.div`
 		/* transform: translateY(50px); */
 		/* font-weight: 600; */
 		font-size: 0.9rem;
+		background-color: #f3f4f6;
 	}
 
 	&:hover {
