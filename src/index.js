@@ -10,6 +10,8 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "./utils/stripe/stripe.utils";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "react-loading-skeleton/dist/skeleton.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,6 +22,11 @@ root.render(
 				<BrowserRouter>
 					<Elements stripe={stripePromise}>
 						<App />
+						<ToastContainer
+							style={{
+								width: "300px",
+							}}
+						/>
 					</Elements>
 				</BrowserRouter>
 			</PersistGate>
