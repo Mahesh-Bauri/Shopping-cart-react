@@ -20,7 +20,7 @@ export const Body = styled.div`
 	align-items: center;
 	justify-content: center;
 	// border: 1px solid black;
-	background-color: #f5f5f5;
+	background-color: #f9fafb;
 	// position: absolute;
 	z-index: 1;
 

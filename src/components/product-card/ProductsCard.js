@@ -28,7 +28,7 @@ function ProductsCard({ product }) {
 	return (
 		<ProductCardContainer>
 			{loading ? (
-				<Skeleton height={177} width={300} />
+				<Skeleton height={177} width={600} />
 			) : (
 				<img src={imageUrl} alt={name} />
 			)}

@@ -9,6 +9,13 @@ body {
 	font-family: "Open Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	@media screen and (max-width: 768px) {
+		padding: 0 2rem;
+	}
+	@media screen and (max-width: 576px) {
+		padding: 0 1rem;
+	}
 }
 
 code {
