@@ -1,13 +1,9 @@
 import React from "react";
+import { FooterContainer } from "./footer.styles";
 
 const Footer = () => {
 	return (
-		<div
-			style={{
-				display: "flex",
-				justifyContent: "center",
-			}}
-		>
+		<FooterContainer>
 			<p
 				style={{
 					padding: "2rem",
@@ -25,7 +21,7 @@ const Footer = () => {
 					Mahesh Bauri
 				</a>
 			</p>
-		</div>
+		</FooterContainer>
 	);
 };
 
