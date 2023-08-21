@@ -1,70 +1,168 @@
-# Getting Started with Create React App
+# Shopping-Cart React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a shopping web app build using reactjs.
 
-## Available Scripts
+### [Live demo](https://react-shopping-cart-mb.netlify.app/)
 
-In the project directory, you can run:
+![Imgur](https://i.imgur.com/uJDPuvy.png)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Imgur](https://i.imgur.com/V7Y8ZGF.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+![Imgur](https://i.imgur.com/89S2YTV.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+![Imgur](https://i.imgur.com/4RRBJij.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Imgur](https://i.imgur.com/F1dGwEu.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+![Imgur](https://i.imgur.com/m5OPS4G.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Imgur](https://i.imgur.com/RZbbTmE.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+- Developed a shopping web app using **React, SASS, Styled-Components, ContextAPI, React-Router, React-Redux, Redux-thunk, Redux-Persist, Firebase,** etc.
+- Implemented feature to add product to cart with flexibility to add quantity of the product, payment using **StripeApi**.
+- Implemented **authentication** with Firebase, **signIn-with-google**, signUp-with-email-and-password.
+- Added Netlify **serverless** functions to request payment to stripe API.
+- Developed feature to store data in frontend in local storage to keep the data persisted using **Redux-persist**.
+- Implemented **Code-Splitting** to optimize the app by creating multiple chunks.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Folder Structure
 
-### Code Splitting
+```
+Shopping-Cart/
+├── .netlify/
+├── netlify/
+│   └── functions/
+│       └── create-payment-intent.js
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── button/
+│   │   │   ├── Button.js
+│   │   │   └── button.styles.js
+│   │   ├── cart-dropdown/
+│   │   ├── cart-icon/
+│   │   ├── cart-item/
+│   │   ├── categories-preview/
+│   │   ├── category/
+│   │   ├── category-preview/
+│   │   ├── checkout/
+│   │   ├── checkout-item/
+│   │   ├── directory/
+│   │   ├── directory-item/
+│   │   ├── footer/
+│   │   ├── form-input/
+│   │   ├── payment-form/
+│   │   ├── product-card/
+│   │   ├── routes/
+│   │   ├── sign-in-form/
+│   │   ├── sign-up-form/
+│   │   └── spinner/
+│   ├── store/
+│   │   ├── cart/
+│   │   │   ├── cart.action.js
+│   │   │   ├── cart.reducer.js
+│   │   │   ├── cart.selector.js
+│   │   │   └── cart.types.js
+│   │   ├── category/
+│   │   ├── middleware/
+│   │   ├── user/
+│   │   ├── root-reducer.js
+│   │   ├── root-saga.js
+│   │   └── store.js
+│   ├── utils/
+│   │   ├── firebase/
+│   │   │   └── firebase.utils.js
+│   │   ├── reducer/
+│   │   │   └── reducer.utils.js
+│   │   └── stripe/
+│   │       └── stripe.utils.js
+│   ├── App.js
+│   ├── categories.json
+│   ├── index.js
+│   ├── index.scss
+│   ├── logo.svg
+│   └── shop-data.js
+├── .env
+├── gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 1. Install Dependencies
 
-### Making a Progressive Web App
+```sh
+$ npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 2. Create a new firebase project
 
-### Advanced Configuration
+Login to your google account and create a new firebase project [here](https://console.firebase.google.com/u/0/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Create an `.env` file and add the following variables.
 
-### Deployment
+```
+// SAMPLE CONFIG .env, you should put the actual config details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+REACT_APP_STRIPE_PUBLISHABLE_KEY="your_publishable_key"
+STRIPE_SECRET_KEY="your_stripe_secret_key"
 
-### `npm run build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After setting up necessary configuration,
+create a **Database** and choose **Cloud Firestore** start in test mode
+
+And then add categories data in `categories.json` into firebase in categories collection. We need to create two collection **categories** and **users**
+
+### 3. Run development server
+
+```sh
+$ npm start
+```
+
+### 4. Run development server using netlify-cli if you want to test stripe payment
+
+```sh
+$ netlify dev
+```
+
+---
+
+### Tools Used
+
+- HTML5
+- CSS3
+- JavaScript
+- React
+- SASS
+- Styled-Components
+- React-Router
+- React-Redux
+- Redux-thunk
+- Redux-Saga
+- Redux-Persist
+- Firebase
